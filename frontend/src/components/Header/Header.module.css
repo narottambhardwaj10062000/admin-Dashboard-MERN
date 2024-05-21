@@ -1,0 +1,35 @@
+.headerContainer {
+    height: 10%;
+    /* background-color: #FFFFFF; */
+    background-color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+}
+
+.leftNav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.leftNav>p{
+    font-size: 26px;
+    color: #1D1D1D;
+    font-weight: 700;
+}
+
+.rightNav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.rightNav>div{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 16px;
+    color: #4B515E;
+}

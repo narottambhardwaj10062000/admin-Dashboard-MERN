@@ -1,0 +1,28 @@
+.homeContainer {
+    width: 100%;
+    display: flex;
+    background-color: #F6F6F6;
+    gap: 0;
+}
+
+.leftContainer{
+    width: 20%;
+}
+
+.rightContainer {
+    width: 80%;
+}
+
+.rightContainer>p {
+    color: #1D1D1D;
+    text-transform: capitalize;
+    font-family: Schibsted Grotesk;
+    font-size: 24px;
+    padding-left: 2rem;
+}
+
+.test {
+    display: flex;
+    gap: 1rem;
+}
+
