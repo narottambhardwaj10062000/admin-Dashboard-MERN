@@ -9,8 +9,8 @@ const router = express.Router();
 const transporter = nodemailer.createTransport({
     service: 'Gmail', 
     auth: {
-        user: "narottam220@gmail.com", 
-        pass: "dskz qqvj bklg bfsz",
+        user: "write your email", 
+        pass: "write your email app password",
     },
 });
 
@@ -27,7 +27,7 @@ router.post('/documents/:tenantId', async (req, res) => {
 
         // Create the email content
         const mailOptions = {
-            from: 'narottam220@gmail.com',
+            from: 'write your email',
             to: tenant.personalInformation.email, 
             subject: 'Document Submission Request',
             text: `Dear ${tenant.personalInformation.firstName},\n\nPlease submit the required documents at your earliest convenience.\n\nThank you!`,
