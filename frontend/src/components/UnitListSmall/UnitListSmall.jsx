@@ -9,11 +9,9 @@ import { useNavigate} from "react-router-dom";
 const UnitListSmall = () => {
   const navigate = useNavigate();
   const [units, setUnits] = useState([]);
-  console.log(units);
 
   const handleGetAllUnits = async () => {
     const response = await getAllUnits();
-    // console.log(response);
     if (response?.status === 200) {
       setUnits(response?.data?.allUnits);
     }
@@ -36,9 +34,9 @@ const UnitListSmall = () => {
         </p>
       </div>
 
-      {units?.slice(0,3).map((unit) => {
+      {units?.slice(0,3).map((unit, index) => {
         return (
-          <div className={styles.singleUnit}>
+          <div className={styles.singleUnit} key={index}>
             <img src={unit?.image} alt="single-unit-image" />
             <div>
               <div>

@@ -1,25 +1,79 @@
-table {
-    /* border-radius: 10px; */
-    box-shadow: 0px 6px 10px #0000000F;
-}
 
 .container {
-    width: 750px;
+    /* width: 750px; */
+    width: 100%;
     margin-left: 1rem;
     margin-top: 1rem;
     border-radius: 10px;
 }
 
+/* .container>h1 {
+
+} */
+
+table {
+    /* border-radius: 10px; */
+    box-shadow: 0px 6px 10px #0000000F;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    border-collapse: collapse;
+}
+
+/* table th, table td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+  } */
+
+  table th:nth-child(1) {
+    width:160px;
+  }
+
+  table th:nth-child(2) {
+    width:100px;
+    
+  }
+
+  table th:nth-child(3) {
+    width:330px;
+    position:relative;
+  }
+
+  table th:nth-child(4) {
+    width:160px;
+    padding-left:3rem;
+  }
+
+
+  table td:nth-child(1) {
+    width:160px;
+  }
+
+  table td:nth-child(2) {
+    width:100px;
+    
+  }
+
+  table td:nth-child(3) {
+    width:330px;
+  }
+
+  table td:nth-child(4) {
+    width:160px;
+  }
+
 tr {
     height: 54px;
+    width: 100%;
     /* background-color: red; */
     /* display: flex; */
     /* align-items: center; */
 }
 
 .labels {
-    /* background-color: #E6E6E6;  */
+    background-color: #E6E6E6; 
     border-radius: 10px; 
+    /* width:100%; */
 } 
 
 thead {
@@ -33,7 +87,7 @@ th {
 td {
     text-align: center;
     border-bottom: 2px solid #ececec;
-    /* display: flex; */
+    
 
 }
 
@@ -42,3 +96,75 @@ td {
     width: 53px;
     border-radius: 4px;
 }
+
+ /* .columnUnit {
+    width:150px;
+}
+
+.columnPhoto {
+    width:150px;
+}
+
+.columnDetail {
+    width:300px;
+}
+
+
+
+.columnDate {
+    width:100px;
+}
+
+
+.columnUnit1 {
+    width:10px;
+}
+
+.columnPhoto1 {
+    width:150px;
+}
+
+.columnDetail1 {
+    width:300px;
+}
+
+
+
+.columnDate1 {
+    width:100px;
+}
+
+
+
+
+tbody tr {
+    width: 100%;
+}  */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltipText {
+    visibility: hidden;
+    width: 200px;
+    background-color: #f9f9f9;
+    color: #000;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* Position the tooltip below the text */
+    left: 50%;
+    margin-left: -100px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+  }

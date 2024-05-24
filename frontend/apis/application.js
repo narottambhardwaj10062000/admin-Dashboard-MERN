@@ -11,7 +11,7 @@ export const getAllApplications = async () => {
         return response;
     } catch (error) {
         console.log(error);
-        // return error?.response;
+        return error?.response;
     }
 } 
 
@@ -19,7 +19,6 @@ export const getAllApplications = async () => {
 export const getApplicationDetail = async (requestId) => {
     try {
         const reqUrl = `${backendURL}/${requestId}`;
-        // console.log(reqUrl);
         const response = await axios.get(reqUrl);
         return response;    
     } catch ( error ) {

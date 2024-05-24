@@ -1,20 +1,25 @@
 .headerContainer {
     height: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index: -1; */
     /* background-color: #FFFFFF; */
     background-color: #FFFFFF;
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0rem 2rem;
+    padding-left: 22%;
 }
 
-.leftNav{
+.leftNav {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-.leftNav>p{
+.leftNav>p {
     font-size: 26px;
     color: #1D1D1D;
     font-weight: 700;
@@ -26,7 +31,7 @@
     gap: 2rem;
 }
 
-.rightNav>div{
+.rightNav>div {
     display: flex;
     align-items: center;
     gap: 0.5rem;

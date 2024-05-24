@@ -2,15 +2,42 @@
     width: 100%;
     display: flex;
     background-color: #F6F6F6;
-    gap: 0;
+    justify-content: space-between;
+    padding-left: 18%;
+    position: relative;
+    gap: 2rem;
+    /* border: 2px solid green; */
 }
 
-.leftContainer{
-    width: 20%;
+.midContainer {
+    margin-top: 7%;
+    height: 89vh;
+    width: 100%;
+    /* padding: 0rem rem; */
+    
+    /* border: 2px solid blue; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
+
+/* .leftContainer {
+    width: 20%;
+} */
 
 .rightContainer {
-    width: 80%;
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* margin-top: 7%; */
+    height: 89vh;
+
+
+    /* align-items: center; */
+    /* flex: 1 */
+    margin-right: 2rem;
+    /* border: 2px solid red; */
 }
 
 .rightContainer>p {
@@ -19,10 +46,7 @@
     font-family: Schibsted Grotesk;
     font-size: 24px;
     padding-left: 2rem;
+    
 }
 
-.test {
-    display: flex;
-    gap: 1rem;
-}
 

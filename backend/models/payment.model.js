@@ -18,15 +18,15 @@ const paymentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    charges: {
+        type: Number,
+    },
     amountPaid: {
         type: Number,
-        required: true,
     },
     balance: {
         type: Number,
-        required: true,
     }
-
 });
 
 

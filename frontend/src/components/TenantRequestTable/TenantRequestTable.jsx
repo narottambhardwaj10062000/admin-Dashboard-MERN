@@ -1,7 +1,7 @@
 import styles from "./TenantRequestTable.module.css";
 import { getAllApplications } from "../../../apis/application";
 import { useNavigate } from "react-router-dom";
-
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 
 const TenantRequestTable = () => {
@@ -50,7 +50,7 @@ const TenantRequestTable = () => {
                     Amet..{" "}
                 </td>
                 <td>
-                  {item?.requestDate}
+                  {moment(item?.requestDate).format('D MMM YYYY')}
                   <button onClick={() => navigate(`/applicationdetail/${item?._id}`)}>Review</button>
                 </td>
             </tr>
@@ -65,3 +65,6 @@ const TenantRequestTable = () => {
 };
 
 export default TenantRequestTable;
+
+
+

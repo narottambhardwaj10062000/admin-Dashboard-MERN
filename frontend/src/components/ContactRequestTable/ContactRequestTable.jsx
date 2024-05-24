@@ -1,10 +1,10 @@
 import styles from "./ContactRequestTable.module.css";
 import React, { useState, useEffect } from "react";
 import { getAllContactRequests } from "../../../apis/contact";
+import moment from "moment";
 
 const ContactRequestTable = () => {
   const [allRequests, setAllRequests] = useState([]);
-  console.log(allRequests);
 
   const handleGetAllContactRequests = async () => {
     const response = await getAllContactRequests();
@@ -39,61 +39,17 @@ const ContactRequestTable = () => {
         <tbody>
           {allRequests?.map((request) => {
             return (
-              <div key={request?._id}>
-                <tr>
+              
+                <tr key={request?._id}>
                   <td>{request?.unitName}</td>
                   <td>{request?.subject}</td>
                   <td>{request?.message} </td>
-                  <td>{request?.date}</td>
+                  <td>{moment(request?.date).format('D MMM YYYY')}</td>
                 </tr>
-              </div>
+              
             );
           })}
 
-          {/* <tr>
-            <td>Unit-1</td>
-            <td>Lorem Ipsum Dolor Sit</td>
-            <td>Lorem Ipsum Dolor Sit Amet Amet.. </td>
-            <td>5 May 2024 </td>
-          </tr> */}
-
-          {/* <tr>
-            <td>Unit-2</td>
-            <td>
-            Sit Amet
-                Amet..{" "}
-            </td>
-            <td>
-                Lorem Ipsum Dolor Sit Amet
-                Amet..{" "}
-            </td>
-            <td>5 May 2024 </td>
-            </tr>
-
-            <tr>
-            <td>Unit-3</td>
-            <td>
-            Lorem Ipsum Dolor Sit
-            </td>
-            <td>
-                Lorem Ipsum Dolor Sit Amet
-                Amet..{" "}
-            </td>
-            <td>5 May 2024 </td>
-            </tr>
-
-            <tr>
-            <td>Unit-4</td>
-            <td>
-            Amet
-                Amet..{" "}
-            </td>
-            <td>
-                Lorem Ipsum Dolor Sit Amet
-                Amet..{" "}
-            </td>
-            <td>5 May 2024 </td>
-            </tr> */}
         </tbody>
       </table>
     </div>

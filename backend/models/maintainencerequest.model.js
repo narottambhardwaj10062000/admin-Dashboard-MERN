@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const MaintainenceRequestSchema = new mongoose.Schema({
 
-    // unitId
-
     unitId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Unit",

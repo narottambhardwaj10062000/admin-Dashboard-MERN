@@ -55,16 +55,12 @@ router.get('/:requestId', async (req, res) => {
 // <--------------------------- Approve Application -------------------->
 router.post('/approve/:applicationId', async (req, res) => {
     try {
-        // console.log(req.params.applicationId);
         const app = await Application.findOne({ _id: req.params.applicationId });
         // console.log(app);
 
         const isalreadyPresent = await Tenant.find({unitId: app.unitId});
 
-        
-
         if(isalreadyPresent.length === 0) {
-            // const result = await Tenant.create({...app});
 
             // Create a new tenant document with the application data
             const newTenant = new Tenant({
@@ -84,6 +80,11 @@ router.post('/approve/:applicationId', async (req, res) => {
             // Save the new tenant document
             await newTenant.save();
 
+            const unit = await Unit.findOne({ _id: app.unitId });
+            
+            unit.tenantId = newTenant._id;
+            await unit.save();
+
             // Delete the application document
             await Application.findByIdAndDelete(req.params.applicationId);
 
@@ -91,15 +92,12 @@ router.post('/approve/:applicationId', async (req, res) => {
                 message: "Unit Successfully alloted",
             })
 
-            // if(result) {
-                
-            // }
         }
-        // else {
-        //     res.status(404).json({
-        //         message: "unit not available for rent currently",
-        //     })
-        // }
+        else {
+            res.status(409).json({
+                message: "Unit already Alloted",
+            })
+        }
 
     } catch ( error ) {
         console.log(error)

@@ -11,6 +11,6 @@ export const getAllMaintainenceRequests = async () => {
         return response;
     } catch (error) {
         console.log(error);
-        // return error?.response;
+        return error?.response;
     }
 } 

@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.requestsContainer {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+.slideBar {
+  display: flex;
+  margin-top: 15%;
+  margin-bottom: 2rem;
+  gap: 0;
+  width: 570px;
+  height: 46px;
+  /* background-color: #E6E6E6; */
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.maintaenanceBar {
+  display: flex;
+  align-items: center;
+  background-color: #e6e6e6;
+  width: 205px;
+  padding-left: 20px;
+  padding-right: 15px;
+  border-radius: 23px 0px 0px 23px;
+  height: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ContactBar {
+  display: flex;
+  align-items: center;
+  background-color: #e6e6e6;
+  width: 170px;
+  height: 100%;
+  justify-content: center;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.TenantBar {
+  display: flex;
+  align-items: center;
+  width: 195px;
+  height: 100%;
+  background-color: #e6e6e6;
+  padding-right: 20px;
+  /* margin-right: 20px; */
+  border-radius: 0px 23px 23px 0px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #61aa96;
+  color: white;
+}
+
+.selected p {
+  font-weight: bold;
+}
+
+/* .supContainer {
+    background-color: #61AA96;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+  } */

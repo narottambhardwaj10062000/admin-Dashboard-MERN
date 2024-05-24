@@ -10,22 +10,14 @@ const Form = () => {
   const { requestId } = useParams();
   const navigate = useNavigate();
   const [applicationDetail, setApplicationDetail] = useState({});
-  // const [evicted, setEvicted] = useState(false);
-  // const [criminalRecord, setCriminalRecord] = useState(false);
-
-  // const []
-  // console.log(applicationDetail?.wasEarlierEvicted);
-
-  // console.log(requestId);
 
   const handleApproveRequest = async () => {
     
     const response = await approveRequest(requestId);
-    // console.log(response);
-    // console.log(requestId);
 
     if (response?.status === 200) {
-      navigate("/applications");
+      navigate("/requests");
+
     }
   };
 
@@ -34,11 +26,7 @@ const Form = () => {
 
     if (response?.status === 200) {
       setApplicationDetail(response?.data?.applicationDetail);
-      // setEvicted(response?.data?.applicationDetail?.wasEarlierEvicted);
-      // setCriminalRecord(response?.data?.applicationDetail?.hasCriminalRecord);
     }
-
-    // console.log(response);
   };
 
   useEffect(() => {

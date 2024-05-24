@@ -1,17 +1,32 @@
-const mongoose = require('mongoose');
-const Application = require('./application.model.js'); // Import the Application model
+const mongoose = require("mongoose");
+const Application = require("./application.model.js"); 
 
-const tenantSchema = new mongoose.Schema({
-    // All the fields from applicationSchema
-    ...Application.schema.obj,
-    // Additional fields specific to the Tenant model if any
-    unitId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Unit",
-        unique: true,
-    }
+const documentSchema = new mongoose.Schema({
+  identification: {
+    type: String,
+  },
+  electricityBill: {
+    type: String,
+  },
+  gasAccount: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model('Tenant', tenantSchema);
+const tenantSchema = new mongoose.Schema({
+  // All the fields from applicationSchema
+  ...Application.schema.obj,
 
-// module.exports = Tenant;
+  unitId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Unit",
+    unique: true,
+    required: true,
+  },
+  documents: {
+    documentSchema,
+  },
+});
+
+module.exports = mongoose.model("Tenant", tenantSchema);
+

@@ -125,10 +125,6 @@ const petsInformationSchema = new mongoose.Schema({
 })
 
 const applicationSchema = new mongoose.Schema({
-    // unitName: {
-    //     type: String,
-    //     required: true,
-    // },
     unitId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

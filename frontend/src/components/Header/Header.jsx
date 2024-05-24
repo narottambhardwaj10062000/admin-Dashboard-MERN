@@ -4,13 +4,16 @@ import menuIcon from "../../assets/logos/menuIcon.svg";
 import notificationIcon from "../../assets/logos/notificationIcon.svg";
 import profileIcon from "../../assets/logos/profileIcon.svg";
 import downArrow from "../../assets/logos/downArrow.svg";
+import { useStoreContext } from "../../context/StoreContext";
 
 const Header = () => {
+    const { headerTitle } = useStoreContext ();
+
   return (
     <div className={styles.headerContainer}>
         <div className={styles.leftNav}>
             <img src={menuIcon} alt="menu-icon"/>
-            <p>Dashboard</p>
+            <p>{headerTitle}</p>
         </div>
 
         <div className={styles.rightNav}>
