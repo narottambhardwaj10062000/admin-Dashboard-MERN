@@ -25,9 +25,10 @@ export const handleDocumentRequest = async (tenantId) => {
     }
 };
 
-export const handlePaymentRequest = async (unitId) => {
+export const handlePaymentRequest = async (unitId, month, amount) => {
     try {
-        const response = await axios.post(`${backendURL}/request/alert/${unitId}`);
+        const reqPayload = {month, amount};
+        const response = await axios.post(`${backendURL}/request/alert/${unitId}`, reqPayload);
         alert(response.data.message);
     } catch (error) {
         console.error('Error requesting documents:', error);

@@ -45,7 +45,8 @@ router.post('/documents/:tenantId', async (req, res) => {
 
 router.post('/alert/:unitId', async (req, res) => {
     const { unitId } = req.params;
-    console.log(unitId);
+    // console.log(unitId);
+    const {month, amount} = req.body;
 
     try {
         // Fetch tenant details
@@ -66,7 +67,7 @@ router.post('/alert/:unitId', async (req, res) => {
             from: 'narottam220@gmail.com',
             to: tenant.personalInformation.email, 
             subject: 'Payment Due Alert',
-            text: `Dear ${tenant.personalInformation.firstName},\n\nPlease clear your dues as soon as possible.\n\nThank you!`,
+            text: `Dear ${tenant.personalInformation.firstName},\n\nPlease clear your dues of $${amount} for month ${month} as soon as possible.\n\nThank you!`,
         };
 
         // Send the email

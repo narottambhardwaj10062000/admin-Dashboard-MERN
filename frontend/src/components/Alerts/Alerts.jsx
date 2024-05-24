@@ -7,8 +7,8 @@ import { handlePaymentRequest } from "../../../apis/common";
 const Alerts = () => {
   const { alerts, setAlerts } = useStoreContext();
 
-  const requestPayment = async (unitId) => {
-    await handlePaymentRequest(unitId);
+  const requestPayment = async (unitId, month, amount) => {
+    await handlePaymentRequest(unitId, month, amount );
   }
 
   return (
@@ -60,7 +60,7 @@ const Alerts = () => {
               </p>
             </div>
 
-            <button onClick={() => requestPayment(alert?.unitId)}>
+            <button onClick={() => requestPayment(alert?.unitId, alert?.currentMonth, alert?.totalDueAmount)}>
               <span>
                 <img src={sendIcon} alt="send-icon" />
               </span>
